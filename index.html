@@ -6,10 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Envelope + Letter (Open/Close on Click)</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(5, 53, 61);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .video-button {
+            display: block;
+            padding: 15px 25px;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .video-button:hover {
+            background-color: #ff4f4f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .instruction-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="envelope-wrapper">
+        <h1 style="color: white; text-align: center; margin-bottom: 20px;">💖 บะบี๋ 💖</h1>
+        
+        <!-- ข้อความคำแนะนำ -->
+        <div class="instruction-text">กดที่หัวใจก่อน</div>
+        
+        <!-- ซองจดหมาย -->
+        <div class="envelope-wrapper" id="envelopeWrapper">
             <div class="envelope">
                 <div class="letter">
                     <div class="text">
@@ -17,18 +81,23 @@
                         <p>
                             ถึงบะบี๋คนสวยของเค้าวันนี้ถือว่าเป็นวันครบรอบ 1 ปี 10 เดือนของเรานะ เค้าขอโทษที่หลายเดือนที่ผ่านมาเค้าไม่ได้ทำอะไรให้เทอเลย 
                             เป็นครบรอบครั้งแรกที่เราไม่ได้อยู่ใกล้ๆกัน เค้าขอโทษที่เค้าทำไม่ดีกับเทอไม่สนใจ มัวแต่เล่นเกม เค้าจะพยายามปรับปรุงในสิ่งที่เค้าทำไม่ดีนะบะบี๋ รักหนูที่สุดเลยนะ แล้วหนูรักเค้ามั้ย เค้ารักที่สุดในโลกเลยยย💕
-                            <div class="video"><a href="https://youtu.be/ks7p6DA0dKk?si=pkgCnXFypfqw80Ux">กดตรงนี้จิบะบี๋</a></div>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="heart"></div>
         </div>
+        
+        <!-- ปุ่มลิงค์วิดีโอ -->
+        <a href="https://youtu.be/ks7p6DA0dKk?si=pkgCnXFypfqw80Ux" class="video-button">กดตรงนี้จิบะบี๋</a>
     </div>
+    
     <script>
-        const envelope = document.querySelector('.envelope-wrapper');
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
+        const envelopeWrapper = document.getElementById('envelopeWrapper');
+        
+        // เปิดซองจดหมายเมื่อคลิกที่ซอง
+        envelopeWrapper.addEventListener('click', () => {
+            envelopeWrapper.classList.toggle('flap');
         });
     </script>
 </body>
