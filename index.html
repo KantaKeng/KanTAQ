@@ -1,9 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Hello, GitHub Pages!</h1>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>ถึงบะบี๋</strong>
+                        <p>
+                            ถึงบะบี๋คนสวยของเค้าวันนี้ถือว่าเป็นวันครบรอบ 1 ปี 10 เดือนของเรานะ เค้าขอโทษที่หลายเดือนที่ผ่านมาเค้าไม่ได้ทำอะไรให้เทอเลย 
+                            เป็นครบรอบครั้งแรกที่เราไม่ได้อยู่ใกล้ๆกัน เค้าขอโทษที่เค้าทำไม่ดีกับเทอไม่สนใจ มัวแต่เล่นเกม เค้าจะพยายามปรับปรุงในสิ่งที่เค้าทำไม่ดีนะบะบี๋ รักหนูที่สุดเลยนะ แล้วหนูรักเค้ามั้ย เค้ารักที่สุดในโลกเลยยย💕
+                            <div class="video"><a href="https://youtu.be/ks7p6DA0dKk?si=pkgCnXFypfqw80Ux">กดตรงนี้จิบะบี๋</a></div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
 </body>
 </html>
