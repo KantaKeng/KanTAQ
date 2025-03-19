@@ -77,13 +77,13 @@
   }
   .heart {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
     background: var(--heart-color);
     z-index: 4;
-    transform: translate(-50%, -20%) rotate(45deg);
+    transform: translate(-50%, 65px) rotate(45deg);
     transition: transform 0.5s ease-in-out 1s;
     box-shadow: 0 1px 6px var(--shadow-color);
     cursor: pointer;
@@ -92,16 +92,16 @@
   .heart:after {
     content: "";
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
     background-color: var(--heart-color);
     border-radius: 50%;
   }
   .heart:before {
-    top: -7.5px;
+    top: -12.5px;
   }
   .heart:after {
-    right: 7.5px;
+    right: 12.5px;
   }
   .flap > .envelope:before {
     transform: rotateX(180deg);
@@ -113,6 +113,6 @@
     transition-delay: 1s;
   }
   .flap > .heart {
-    transform: rotate(90deg);
+    transform: rotate(90deg) translate(0, -65px);
     transition-delay: 0.4s;
   }
